@@ -123,8 +123,8 @@ function moveAndChange() {
     newX = Math.max(0, Math.min(window.innerWidth - 100, newX));
     newY = Math.max(0, Math.min(window.innerHeight - 100, newY));
 
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
+    noBtn.style.left = newX + "px";
+    noBtn.style.top = newY + "px";
 
     const randomIndex = Math.floor(Math.random() * messages.length);
     noBtn.innerText = messages[randomIndex];
