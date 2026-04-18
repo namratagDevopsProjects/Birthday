@@ -94,15 +94,19 @@ Think twice. Once you say YES, there’s no going back 😌🎂
 const noBtn = document.getElementById("noBtn");
 
 const messages = [
-    "You can't catch me 😜",
     "Okay last chance 😳",
-    "Pleaseeee 🥺",
+    "You can't catch me 😜",
+    "Pleaaseeee 🥺",
+    "I love you sooo much",
+    "Don't say no 🥺",
+    "Oye, say yes 😳",
     "Don't break my heart 💔",
     "Think again 💭",
-    "I'm cute, say yes 😚",
+    "I'm cute, please say yes 😚",
     "Just click Yes na 😝",
-    "Love you already 💖",
-    "Are you sure? 😢"
+    "Are you sure? 😢",
+    "Love you already 💖"
+    
 ];
 noBtn.addEventListener("mouseover", moveAndChange);
 noBtn.addEventListener("touchstart", moveAndChange);
@@ -133,7 +137,7 @@ function moveAndChange() {
 function acceptRequest() {
     const msg = document.getElementById("message");
 
-    msg.innerText = "I knew it! You just made my day 💖😄 You just made my world brighter 💖😄";
+    msg.innerText = "I knew it! You just made my day brighter💖😄";
     document.body.style.background = "#ffd6e8";
 
     document.getElementById("hearts").style.display = "block";
