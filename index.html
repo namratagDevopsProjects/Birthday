@@ -109,8 +109,19 @@ noBtn.addEventListener("touchstart", moveAndChange);
 noBtn.addEventListener("click", moveAndChange);
 
 function moveAndChange() {
-    const x = Math.random() * (window.innerWidth - 30);
-    const y = Math.random() * (window.innerHeight - 30);
+   const currentX = noBtn.offsetLeft;
+    const currentY = noBtn.offsetTop;
+
+    // Move only a little (between -50px to +50px)
+    const offsetX = (Math.random() - 0.5) * 100;
+    const offsetY = (Math.random() - 0.5) * 100;
+
+    let newX = currentX + offsetX;
+    let newY = currentY + offsetY;
+
+    // Keep inside screen
+    newX = Math.max(0, Math.min(window.innerWidth - 100, newX));
+    newY = Math.max(0, Math.min(window.innerHeight - 100, newY));
 
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
