@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Request 💖</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+        background: #ffe6e6;
+        transition: background 0.5s;
+    }
+
+    h2 {
+        color: #d63384;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: auto;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        margin: 10px;
+        cursor: pointer;
+    }
+
+    #yesBtn {
+        background-color: #28a745;
+        color: white;
+    }
+
+    #noBtn {
+        background-color: #dc3545;
+        color: white;
+        position: absolute;
+    }
+
+    #message {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #d63384;
+        font-weight: bold;
+    }
+
+    #hearts {
+        font-size: 24px;
+        margin-top: 15px;
+        display: none;
+    }
+
+    @media (max-width: 480px) {
+        h2 {
+            font-size: 16px;
+        }
+        button {
+            width: 80%;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>
+I want to make your birthday as special as you make my life every day ❤️  
+Will you let me celebrate you… my way? 💖  
+Think twice. Once you say YES, there’s no going back 😌🎂
+</h2>
+
+<button id="yesBtn" onclick="acceptRequest()">Yes 💖</button>
+<button id="noBtn">No 😜</button>
+
+<div id="message"></div>
+<div id="hearts">💖💖💖 💕💕 💘💘</div>
+
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+
+const messages = [
+    "You can't catch me 😜",
+    "Okay last chance 😳",
+    "Pleaseeee 🥺",
+    "Don't break my heart 💔",
+    "Think again 💭",
+    "I'm cute, say yes 😚",
+    "Just click Yes na 😝",
+    "Love you already 💖",
+    "Are you sure? 😢"
+];
+
+noBtn.addEventListener("mouseover", moveAndChange);
+noBtn.addEventListener("click", moveAndChange);
+
+function moveAndChange() {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 120);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    noBtn.innerText = messages[randomIndex];
+}
+
+function acceptRequest() {
+    const msg = document.getElementById("message");
+
+    msg.innerText = "I knew it! You just made my day 💖😄";
+    document.body.style.background = "#ffd6e8";
+
+    document.getElementById("hearts").style.display = "block";
+
+    setTimeout(() => {
+        alert("Mission Successful 😎💘");
+    }, 500);
+
+    let phoneNumber = "919604246969"; // PUT YOUR NUMBER
+    let message = "Hey 😍 I just said YES to your request! 💖";
+
+    let url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+
+    setTimeout(() => {
+        window.open(url, "_blank");
+    }, 1200);
+}
+</script>
+
+</body>
+</html>
